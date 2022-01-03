@@ -7,12 +7,14 @@ code for "Self-supervised representation learning on dynamic graphs"  [[paper]](
   
     tensorflow==1.13.1  
     numpy==1.16.4  
-    scikit_learn==0.22.1  
+    scikit_learn==1.0
+    alive_progress==2.1.0
 
 
 ## Preprocessing
 
 ### Dataset
+Create a folder 'dataset' to store data file.
 
 [Wikipedia](http://snap.stanford.edu/jodie/wikipedia.csv)  
 [Reddit](http://snap.stanford.edu/jodie/reddit.csv)  
@@ -29,8 +31,9 @@ We use the dense npy format to save the features in binary format. If edge featu
 ## Model Training
 Multi task learning on dynamic node classification
 
-    python main.py --data wikipedia --mode mtl
+    python mtl_train.py wikipedia
    
 Self-supervised learning on dynamic node classification
 
-    python main.py --data wikipedia --mode pf
+    python pre_train.py wikipedia pre_train
+    python pre_train.py wikipedia fune_train
