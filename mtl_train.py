@@ -121,7 +121,7 @@ if __name__ == '__main__':
                                               instan_graph.net.queue_time, instan_graph.net.queue_ptr])
     gpu_options = tf.GPUOptions(allow_growth=True)
     with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)) as sess:
-        for i_step in range(1):
+        for i_step in range(10):
             print('total org times: %d' % i_step)
             step = 0
             max_valid_auc = 0
